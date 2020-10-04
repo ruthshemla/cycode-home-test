@@ -28,7 +28,9 @@ const Subscribe = ({onSubmit, msg}) => {
     };
     
     const onSubmitClick = () => {
-        localStorage.setItem(LOCAL_STORAGE_SUBSCRIPTION_KEY, value.join()) 
+        if(localStorage){
+            localStorage.setItem(LOCAL_STORAGE_SUBSCRIPTION_KEY, value.join()); 
+        }
         onSubmit(value.join()); 
         setShowModal(!showModal); 
     };

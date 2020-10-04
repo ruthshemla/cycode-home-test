@@ -5,7 +5,8 @@ import Subscribe from './Subscribe';
 import { LOCAL_STORAGE_SUBSCRIPTION_KEY } from './constants';
 
 const Routes = () => {
-    const [msg, setMsg] = useState(localStorage.getItem(LOCAL_STORAGE_SUBSCRIPTION_KEY));
+    const initMsg = localStorage? localStorage.getItem(LOCAL_STORAGE_SUBSCRIPTION_KEY) : 'Welcome!';
+    const [msg, setMsg] = useState(initMsg);
     
     return (<Switch>
         <Route exact path="/" component={() => <Home msg={msg}/>}/>
